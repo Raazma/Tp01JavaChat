@@ -53,7 +53,7 @@ public class Connexion implements Runnable
         }
         catch(NullPointerException e)
             {
-             System.out.println("Client donnecte");
+             line = "";
             }
         finally
         {
