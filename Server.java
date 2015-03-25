@@ -36,11 +36,11 @@ public class Server
           try
           {
             client = server.accept();
-            client.setSoTimeout(TIME_OUT);
-            connexion = new Connexion(client);
-
-            if(activeCon.size() < NB_MAX_CON )
+            System.out.println(activeCon.size());
+            if(activeCon.size() + 1 <= NB_MAX_CON )
             {
+            connexion = new Connexion(client);  
+            client.setSoTimeout(TIME_OUT);            
             Thread tCon = new Thread(connexion);
             tCon.setDaemon(true);
             activeCon.add(connexion);

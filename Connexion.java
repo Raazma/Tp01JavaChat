@@ -15,12 +15,11 @@ public class Connexion implements Runnable
   final int TAILLE_MAX = 80;
   final int USER_MAX = 8;
   private boolean end = false;
-  static int Nb_Connection = 0;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public Connexion(Socket lesocket)
     {
         socket = lesocket;
-        Nb_Connection++;
+       
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public void run()
@@ -65,8 +64,7 @@ public class Connexion implements Runnable
             catch(IOException e)
             {
 
-            }
-            Nb_Connection--;
+            }           
         }
 
         System.out.println("Client donnecte");
@@ -89,9 +87,5 @@ public class Connexion implements Runnable
      return line;
   }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-  public static int GetNbConnection()
-  {
-    return Nb_Connection;
-  }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
