@@ -39,7 +39,7 @@ public class Server
             client.setSoTimeout(TIME_OUT);
             connexion = new Connexion(client);
 
-            if(connexion.GetNbConnection() <=  NB_MAX_CON )
+            if(activeCon.size() < NB_MAX_CON )
             {
             Thread tCon = new Thread(connexion);
             tCon.setDaemon(true);
